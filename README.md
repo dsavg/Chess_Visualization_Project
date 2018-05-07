@@ -8,3 +8,7 @@ This repo hosts the Final Project for the Data Visualization course from the Mas
 
 ## GitHub Page:
 https://dsavg.github.io/Chess_Visualization_Project/
+
+## References:
+- https://ebemunk.com/chess-dataviz/
+- https://github.com/jbkunst/d3-chessboard

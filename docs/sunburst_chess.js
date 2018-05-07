@@ -15704,6 +15704,8 @@ d3.json('data.json', function(err, data) {
   var board3 = d3chessboard()
                     .fen(fenstring)
                     .textopacity(0.5)
+                    .whitecellcolor("#FAFAFA")
+                    .blackcellcolor("#CCC")
 
   d3.select("#chess-container3").call(board3);
 
@@ -15722,6 +15724,8 @@ d3.json('data.json', function(err, data) {
       var board3 = d3chessboard()
                         .fen(fenstring)
                         .textopacity(0.5)
+                        .whitecellcolor("#FAFAFA")
+                        .blackcellcolor("#CCC")
 
       d3.select("#chess-container3").call(board3);
 
@@ -15738,6 +15742,8 @@ d3.json('data.json', function(err, data) {
       var board3 = d3chessboard()
                         .fen(fenstring)
                         .textopacity(0.5)
+                        .whitecellcolor("#FAFAFA")
+                        .blackcellcolor("#CCC")
 
       d3.select("#chess-container3").call(board3);
     });
