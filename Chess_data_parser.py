@@ -41,7 +41,7 @@ def dict_maker(chess_dict, game):
     return chess_dict
 
 
-def game_selector(pgn_file, number_games, elo_rating=1000, depth=5):
+def game_selector(pgn_file, number_games, elo_rating=1000, depth=10):
     all_games = []
     for i in range(number_games):
         first_game = chess.pgn.read_game(pgn_file)  # reads the first 10 games, one at the time
@@ -54,7 +54,6 @@ def game_selector(pgn_file, number_games, elo_rating=1000, depth=5):
                 (int(first_game.headers["PlyCount"]) > 10):
             # we want to make sure that the players are experts
 
-            print('#'+str(first_game.headers["PlyCount"])+'#')
             outcome = first_game.headers["Result"]
             if outcome[0:2] == "1-":
                 result = 1
@@ -68,7 +67,7 @@ def game_selector(pgn_file, number_games, elo_rating=1000, depth=5):
             while node.variations:  # now we are looping within the games
 
                 if j > depth:  # we don't want the depth of the sunburst graph to be greater then a certain depth
-                    print('##')
+
                     break
 
                 else:

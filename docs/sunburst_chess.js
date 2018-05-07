@@ -15738,6 +15738,8 @@ d3.json('data.json', function(err, data) {
       d3.select('#variation').text('');
       d3.select('#percentage').text('');
 
+      d3.select('#points').text('')
+
       var fenstring = '';
       var board3 = d3chessboard()
                         .fen(fenstring)
@@ -15761,5 +15763,6 @@ d3.json('data.json', function(err, data) {
     d4Button.classed('button-primary', true);
     openings.data(data.openings.children[1]);
   });
-});
 
+
+});
