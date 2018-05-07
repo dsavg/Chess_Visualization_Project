@@ -100,9 +100,14 @@
       stroke-width: 0.5;
     }
     .cdv-openings .san {
-      fill: #fff;
-      font-size: 12px;
+      fill: white;
+      font-size: 11px;
       pointer-events: none;
+      text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
     }
     .cdv-move-paths .white rect {
       fill: white;
@@ -120,6 +125,7 @@
       text-transform: lowercase;
       font-family: sans-serif;
       font-size: 12px;
+
     }
     .cdv-move-paths .move-path {
       fill: transparent;
@@ -128,29 +134,66 @@
       opacity: 0.1;
     }
 
+
     </style>
+    <script>
+    exports.colors = [
+      'lightseagreen',
+      'forestgreen',
+      'goldenrod',
+      'dodgerblue',
+      'darkorchid',
+      'crimson'
+    ];
+    </script>
 </head>
 <body>
     <center>
-    <h1>Chess Visualization Project</h1>
-    <p>This is the link from our dataset: <a href="https://www.ficsgames.org/download.html">FICS</a></p>
-    <p>Danai Avgerinou, Jake Toffler</p>
-        <!--<img src = "https://media.giphy.com/media/JuUWDI13JB0XK/giphy.gif">-->
+    <div style="float: left; width: 50%">
+        <h1>Chess Visualization Project</h1>
+        <p>This is the link to our dataset: <a href="https://www.ficsgames.org/download.html">FICS</a></p>
+        <p>Danai Avgerinou, Jake Toffler</p>
+            <!--<img src = "https://media.giphy.com/media/JuUWDI13JB0XK/giphy.gif">-->
+            <br>
+        <h2> Chess Openings</h2>
+        <script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
+        <script type="text/javascript" src="sunburst_chess.js"></script>
+        <div class="cdv-openings" id="openings">
+        </div>
+        <div class="caption">
+        Chess games 2017 openings breakdown (first 6 moves).
+        <br> Move Sequence: <span id="variation"></span>
+        <div style = "position: absolute; top: 69%; left: 20.5%; width: 140px; text-align: center; color: #666; z-index: -1;">
+        From this position, the expected points for white is: <br> <span id="points" ></span>
+        </div>
+        <br> Percentage of games with this sequence: <span id="percentage"></span>
         <br>
-    <h2> Sunburst Diagram</h2>
-    <script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
-    <script type="text/javascript" src="sunburst_chess.js"></script>
-    <div class="cdv-openings" id="openings">
+        <button id="all" class="button button-primary">All Openings</button>
+        <button id="d4" class="button">d4 Variations</button>
+        </div>
     </div>
-    <div class="caption">
-    Chess games 2017 openings breakdown (first 9 moves).
-    <br> Move Sequence: <span id="variation"></span>
-    <br> Percentage of games with this sequence: <span id="percentage"></span>
-    <br>
-    <button id="all" class="button button-primary">All Openings</button>
-    <button id="d4" class="button">d4 Variations</button>
-    </div>
+    <div style="float: right; width: 50%">
+        <div id="chess-container"></div>
+        <div id="chess-container2"></div>
+        <!--<div id="chess-container3"></div>-->
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <span id="chess-container3"></span>
 
+        <!--<script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>-->
+        <!--<script type="text/javascript" src="./chess.js"></script>-->
+        <!--<script type="text/javascript" src="./d3-chessboard.js"></script>-->
+        <!--<script type="text/javascript">-->
+
+        <!--/* change perspective */-->
+        <!--var fenstring = "rnbqkbnr/pppppppp/8/8/3P4/8/PPP1PPPP/RNBQKBNR b KQkq - 0 1";-->
+        <!--var board3 = d3chessboard()-->
+                        <!--.fen(fenstring)-->
+                        <!--.textopacity(0.5)-->
+
+        <!--d3.select("#chess-container3").call(board3);-->
+
+        <!--</script>-->
+    </div>
 
     </center>
 </body>
