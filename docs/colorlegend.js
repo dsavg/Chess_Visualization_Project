@@ -169,6 +169,7 @@ var colorlegend = function (target, scale, type, options) {
         .attr('class', 'colorlegend-title')   
         .style('text-anchor', 'middle')
         .style('pointer-events', 'none')
+        .style("font-size", "15px")
         .text('Expected Points (white)');
 
     if (!isVertical) {
