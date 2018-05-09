@@ -21,7 +21,7 @@ var colorlegend = function (target, scale, type, options) {
     , boxHeight = opts.boxHeight || 15      // height of each box (int)
     , title = opts.title || null            // draw title (string)
     , fill = opts.fill || false             // fill the element (boolean)
-    , linearBoxes = opts.linearBoxes || 80   // number of boxes for linear scales (int)
+    , linearBoxes = opts.linearBoxes || 79   // number of boxes for linear scales (int)
     , htmlElement = document.getElementById(target.substring(0, 1) === '#' ? target.substring(1, target.length) : target)  // target container element - strip the prefix #
     , w = htmlElement.offsetWidth           // width of container element
     , h = htmlElement.offsetHeight          // height of container element
@@ -125,6 +125,7 @@ var colorlegend = function (target, scale, type, options) {
 //        return type === 'ordinal' ? 'start' : 'middle';
 //      })
       .style('pointer-events', 'none')
+      .style("font-size", "15px")
       .text(function (d, i) {
         // show label for all ordinal values
         if (type === 'ordinal') {
