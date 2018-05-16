@@ -1,6 +1,6 @@
 # Chess Visualization Project
 
-This repo hosts the Final Project for the Data Visualization course from the Master's in Data Science at USF. 
+This repo hosts the Final Project for the Data Visualization course from the Master's in Data Science at USF. Due to the large size of the pgn file, we neede to store it in [Google Drive](https://drive.google.com/file/d/1cbPOdqe6QRi8fLIDinbIybAc3C1pACiw/view). 
 
 ## Authors:
 * Danai Avgerinou - [LinkedIn](https://www.linkedin.com/in/danai-avgerinou/)

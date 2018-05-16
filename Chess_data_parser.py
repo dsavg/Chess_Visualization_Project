@@ -11,7 +11,7 @@ def dict_maker(chess_dict, game):
     """
     Inputs:
         chess_dict - A dictionary with or without games already entered
-        move_list - A list of mvoes for a single chess game
+        game - A list of moves for a single chess game
     Output:
         chess_dict - A dictionary with the single game added
     """
@@ -42,6 +42,16 @@ def dict_maker(chess_dict, game):
 
 
 def game_selector(pgn_file, number_games, elo_rating=1000, depth=10):
+    """
+    Inputs:
+        pgn_file - The pgn file that contains the information about the games
+        number_games - The number of games we want to include the the graph
+        elo_rating - The minimum elo rating of the players
+        depth - The maximum number of moves we want to show in the sunburst
+    Output:
+        all_games - A list of lists of the game result, move sequence, 
+        and chess board sequence for all the chess games
+    """
     all_games = []
     for i in range(number_games):
         first_game = chess.pgn.read_game(pgn_file)  # reads the first 10 games, one at the time
